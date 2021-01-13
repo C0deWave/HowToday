@@ -114,6 +114,12 @@ class MainActivity : AppCompatActivity(),BottomNavigationView.OnNavigationItemSe
         when(item.itemId){
             R.id.view_my_diary -> {
                 supportFragmentManager.beginTransaction().replace(R.id.linearLayout, MyDiaryFragment()).commitAllowingStateLoss()
+                if (clickedFab){
+                    setVisibility(clickedFab)
+                    setAnimation(clickedFab)
+                    setClickable(clickedFab)
+                    clickedFab = !clickedFab
+                }
                 return true
             }
 

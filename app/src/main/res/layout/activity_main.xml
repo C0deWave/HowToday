@@ -53,7 +53,7 @@
         android:id="@+id/sadFab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:translationY="-30dp"
+        android:translationY="-35dp"
         app:layout_anchor="@id/fab"
         app:layout_anchorGravity="center_horizontal"
         android:src="@drawable/ic_sad"
