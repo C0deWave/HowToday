@@ -11,13 +11,14 @@ import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
+//메인 화면 창입니다.
 class MainActivity : AppCompatActivity(),BottomNavigationView.OnNavigationItemSelectedListener {
 
     //애니메이션을 만들어 줍니다.
     private val fromRightBottom : Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.from_right_bottom_anim) }
     private val toRightBottom : Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.to_right_bottom_anim) }
-    private val fromleftBottom : Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.from_left_bottom_anim) }
-    private val toleftBottom : Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.to_left_bottom_anim) }
+    private val fromLeftBottom : Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.from_left_bottom_anim) }
+    private val toLeftBottom : Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.to_left_bottom_anim) }
     private val fromBottom : Animation by lazy { AnimationUtils.loadAnimation(this, R.anim.from_bottom_anim) }
     private val toBottom : Animation by lazy { AnimationUtils.loadAnimation(this, R.anim.to_bottom_anim) }
 
@@ -77,11 +78,11 @@ class MainActivity : AppCompatActivity(),BottomNavigationView.OnNavigationItemSe
 
     private fun setAnimation(clickedFab : Boolean) {
         if (!clickedFab){
-            smailFab.startAnimation(fromleftBottom)
+            smailFab.startAnimation(fromLeftBottom)
             sadFab.startAnimation(fromBottom)
             angryFab.startAnimation(fromRightBottom)
         }else{
-            smailFab.startAnimation(toleftBottom)
+            smailFab.startAnimation(toLeftBottom)
             sadFab.startAnimation(toBottom)
             angryFab.startAnimation(toRightBottom)
         }

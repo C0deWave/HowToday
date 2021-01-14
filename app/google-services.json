@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1094701394605",
+    "project_id": "howtoday-4521d",
+    "storage_bucket": "howtoday-4521d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1094701394605:android:89d0546927b615b3eb3424",
+        "android_client_info": {
+          "package_name": "com.example.howtoday"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1094701394605-3ll2uvqc46fub0offpv0gcu70kgtcj1n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_6tTX6tB1jiygvwvTA70stLneX8rmC5E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1094701394605-3ll2uvqc46fub0offpv0gcu70kgtcj1n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
