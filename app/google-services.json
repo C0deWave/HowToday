@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1094701394605-c81sqfj7inc782eqad29gokb9jgfikit.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.howtoday",
+            "certificate_hash": "7692683ee8db55faf255aa345a8c618a0303c491"
+          }
+        },
+        {
           "client_id": "1094701394605-3ll2uvqc46fub0offpv0gcu70kgtcj1n.apps.googleusercontent.com",
           "client_type": 3
         }

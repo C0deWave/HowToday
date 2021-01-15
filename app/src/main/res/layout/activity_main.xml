@@ -10,7 +10,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
     </LinearLayout>
 
@@ -37,15 +37,14 @@
     </com.google.android.material.bottomappbar.BottomAppBar>
 
 
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/smailFab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:translationX="-25dp"
-        app:layout_anchor="@id/fab"
         android:src="@drawable/ic_smail"
+        android:translationX="-25dp"
         android:visibility="invisible"
+        app:layout_anchor="@id/fab"
         app:layout_anchorGravity="left" />
 
 
@@ -53,21 +52,20 @@
         android:id="@+id/sadFab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:translationY="-35dp"
-        app:layout_anchor="@id/fab"
-        app:layout_anchorGravity="center_horizontal"
         android:src="@drawable/ic_sad"
+        android:translationY="-35dp"
         android:visibility="invisible"
-        />
+        app:layout_anchor="@id/fab"
+        app:layout_anchorGravity="center_horizontal" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/angryFab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:translationX="25dp"
-        app:layout_anchor="@id/fab"
-        android:visibility="invisible"
         android:src="@drawable/ic_angry"
+        android:translationX="25dp"
+        android:visibility="invisible"
+        app:layout_anchor="@id/fab"
         app:layout_anchorGravity="right" />
 
 
@@ -79,10 +77,6 @@
         android:focusable="true"
         android:src="@drawable/ic_account"
         app:layout_anchor="@id/bottomAppBar" />
-
-
-
-
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
