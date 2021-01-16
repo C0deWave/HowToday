@@ -39,6 +39,11 @@ class LoginActivity : AppCompatActivity() {
             var intent : Intent = Intent(applicationContext,SignUpActivity::class.java)
             startActivity(intent)
         }
+
+        getPasswordButton.setOnClickListener {
+            var intent : Intent = Intent(applicationContext,GetPasswordActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun login() {
@@ -57,6 +62,7 @@ class LoginActivity : AppCompatActivity() {
                     // 메인 화면으로 화면전환을 합니다.
                     var intent : Intent = Intent(applicationContext,MainActivity::class.java)
                     startActivity(intent)
+                    finish()
 
                 } else {
                     // If sign in fails, display a message to the user.

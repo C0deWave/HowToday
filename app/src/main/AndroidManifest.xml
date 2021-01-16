@@ -11,8 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HowToday">
-        <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".GetPasswordActivity"></activity>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".SignUpActivity" />
         <activity android:name=".WriteDiaryActivity" />
         <activity android:name=".LoadingActivity">
             <intent-filter>

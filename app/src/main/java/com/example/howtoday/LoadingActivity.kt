@@ -12,44 +12,38 @@ import java.util.*
 class LoadingActivity : AppCompatActivity() {
 
 
-    private lateinit var auth: FirebaseAuth
-    private lateinit var currentUser: FirebaseUser
+    private var auth: FirebaseAuth? = null
+    private var currentUser: FirebaseUser? = null
 
-    //이미 로그인한 적이 있는지 확인합니다.
-    public override fun onStart() {
-        super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.// Initialize Firebase Auth
-
-        auth = FirebaseAuth.getInstance()
-        currentUser = auth.currentUser!!
-
-        if (currentUser != null) {
-            val intent: Intent = Intent(applicationContext, MainActivity::class.java)
-            Timer().schedule(object : TimerTask() {
-                override fun run() {
-                    startActivity(intent)
-                    finish()
-                }
-            }, 2000)
-        }
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_loading)
 
         auth = FirebaseAuth.getInstance()
-        currentUser = auth.currentUser!!
+        currentUser = auth?.currentUser
 
-        val intent: Intent = Intent(applicationContext, LoginActivity::class.java)
-
+        //이미 로그인한적이 있는지 확인합니다.
         if (currentUser == null) {
+
             Timer().schedule(object : TimerTask() {
                 override fun run() {
+                    val intent: Intent = Intent(applicationContext, LoginActivity::class.java)
                     startActivity(intent)
                     finish()
                 }
             }, 2000)
+
+        }else{
+
+            Timer().schedule(object : TimerTask() {
+                override fun run() {
+                    val intent: Intent = Intent(applicationContext, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+            }, 2000)
+
         }
     }
 }
