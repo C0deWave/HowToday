@@ -8,7 +8,7 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_login2.*
+import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
 
@@ -16,15 +16,9 @@ class LoginActivity : AppCompatActivity() {
 
     var TAG = "login화면 : "
 
-    //이미 로그인한 적이 있는지 확인합니다.
-    public override fun onStart() {
-        super.onStart()// Initialize Firebase Auth
-        auth = Firebase.auth
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login2)
+        setContentView(R.layout.activity_login)
 
         //로그인 버튼을 눌렀을 경우
         loginButton.setOnClickListener {
@@ -38,6 +32,7 @@ class LoginActivity : AppCompatActivity() {
         login_SignInButton.setOnClickListener {
             var intent : Intent = Intent(applicationContext,SignUpActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         getPasswordButton.setOnClickListener {

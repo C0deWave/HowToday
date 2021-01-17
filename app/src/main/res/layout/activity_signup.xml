@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:gravity="center"
-        android:text="How Today"
+        android:text="회원 가입"
         android:textSize="24dp" />
 
 
@@ -21,7 +21,15 @@
         android:padding="10dp">
 
         <EditText
-            android:id="@+id/loginEmailEditText"
+            android:id="@+id/nicknameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:ems="10"
+            android:hint="닉네임" />
+        
+        <EditText
+            android:id="@+id/emailEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -30,7 +38,7 @@
             android:inputType="textEmailAddress" />
 
         <EditText
-            android:id="@+id/loginPasswordEditText"
+            android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -38,33 +46,20 @@
             android:hint="비밀번호"
             android:inputType="textPassword" />
 
+        <EditText
+            android:id="@+id/checkPasswordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:ems="10"
+            android:hint="비밀번호 확인"
+            android:inputType="textPassword" />
+
         <Button
-            android:id="@+id/loginButton"
+            android:id="@+id/signUpButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="로그인" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="1"
-            android:orientation="horizontal">
-            <Button
-                android:id="@+id/login_SignInButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:layout_marginRight="5dp"
-                android:text="회원가입 하기" />
-
-            <Button
-                android:id="@+id/getPasswordButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="0.5"
-                android:text="비밀번호 찾기" />
-        </LinearLayout>
-        </LinearLayout>
+            android:text="회원 가입" />
+    </LinearLayout>
 
 </LinearLayout>
