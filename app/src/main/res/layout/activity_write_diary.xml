@@ -9,7 +9,7 @@
     android:isScrollContainer="false"
     android:nestedScrollingEnabled="false"
     android:overScrollMode="never"
-    tools:context=".WriteDiaryActivity">
+    tools:context=".Activity.WriteDiaryActivity">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView"
@@ -58,10 +58,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-            <com.example.howtoday.LinedEditText
+            <com.example.howtoday.classFile.LinedEditText
                 android:id="@+id/contentEditText_writeDiaryView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
+                android:fontFamily="@font/nanum_barunpen_r"
 
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
@@ -71,14 +73,18 @@
 
                 android:hint="내용"
                 android:inputType="textMultiLine"
-                android:lineSpacingExtra="10dp"
-                android:lineSpacingMultiplier="1"
+
+                android:lineHeight="30sp"
+
+                android:lineSpacingExtra="10sp"
+                android:lineSpacingMultiplier="0.7"
+
                 android:lines="10"
                 android:maxLength="1000"
                 android:maxLines="10"
                 android:minLines="10"
                 android:overScrollMode="never"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
