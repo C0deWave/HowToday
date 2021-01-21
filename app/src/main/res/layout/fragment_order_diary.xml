@@ -5,11 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".fragment.OrderDiaryFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/diaryRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Order diary"
-        android:textSize="40dp"/>
+        />
 
 </FrameLayout>

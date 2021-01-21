@@ -14,6 +14,7 @@ import com.example.howtoday.fragment.MyDiaryFragment
 import com.example.howtoday.fragment.OrderDiaryFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_write_diary.*
 
 //메인 화면 창입니다.
 class MainActivity : AppCompatActivity(),BottomNavigationView.OnNavigationItemSelectedListener {
@@ -37,6 +38,9 @@ class MainActivity : AppCompatActivity(),BottomNavigationView.OnNavigationItemSe
     private val toBottom : Animation by lazy { AnimationUtils.loadAnimation(this,
         R.anim.to_bottom_anim
     ) }
+
+    //글씨기로 다녀옴을 알려주는 전역변수
+    val STATUS_WRITE_DIARY = 200;
 
     //fab의 클릭 여부를 확인합니다.
     private var clickedFab = false
@@ -171,14 +175,26 @@ class MainActivity : AppCompatActivity(),BottomNavigationView.OnNavigationItemSe
 //            }
 
             R.id.write_diary ->{
-                //supportFragmentManager.beginTransaction().replace(R.id.linearLayout, WriteDiaryFragment()).commitAllowingStateLoss()
-                // 화면전환을 할 수 있도록 만들자
-                var intent : Intent = Intent(applicationContext,
-                    WriteDiaryActivity::class.java)
-                startActivity(intent)
+
+                var intent : Intent = Intent(applicationContext, WriteDiaryActivity::class.java)
+                startActivityForResult(intent, STATUS_WRITE_DIARY)
                 return true
             }
         }
         return false
+    }
+
+    //글쓰기에서 돌아올 때 처리할 일
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == STATUS_WRITE_DIARY && resultCode == RESULT_OK) {
+            bottomNavigationView.selectedItemId = R.id.placeholder
+            bottomNavigationView.setSelectedItemId(R.id.placeholder)
+            supportFragmentManager.beginTransaction().replace(
+                R.id.linearLayout,
+                OrderDiaryFragment()
+            ).commitAllowingStateLoss()
+            Log.d("글쓰기에서 돌아옴","글쓰기에서 돌아옴")
+        }
     }
 }
