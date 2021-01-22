@@ -11,7 +11,7 @@ class WriteInfo {
     var postId: Int = 0
     var date:Date? = null
 
-    constructor(title: String, content: String, publisherName: String, publisherUid: String, date:Date) {
+    constructor(title: String, content: String, publisherName: String, publisherUid: String, date:Date?) {
         this.title = title
         this.content = content
         this.publisherName = publisherName
