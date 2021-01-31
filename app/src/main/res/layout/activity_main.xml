@@ -6,14 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".Activity.MainActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/NestedScrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:layout_height="match_parent">
 
-    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
@@ -25,7 +30,8 @@
         app:fabCradleMargin="5dp"
         app:fabCradleRoundedCornerRadius="10dp"
         app:fabCradleVerticalOffset="0dp"
-        >
+        app:hideOnScroll="false"
+        app:layout_scrollFlags="scroll|enterAlways">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigationView"
@@ -76,6 +82,7 @@
         android:layout_width="70dp"
         android:layout_height="67dp"
         android:contentDescription="OrderDiary"
+
         android:focusable="true"
         android:src="@drawable/ic_account"
         app:layout_anchor="@id/bottomAppBar" />

@@ -9,6 +9,8 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.NestedScrollView
+import androidx.fragment.app.Fragment
 import com.example.howtoday.R
 import com.example.howtoday.fragment.MyDiaryFragment
 import com.example.howtoday.fragment.OrderDiaryFragment
@@ -78,6 +80,27 @@ class MainActivity : AppCompatActivity(),BottomNavigationView.OnNavigationItemSe
             Toast.makeText(applicationContext,"angryFab",Toast.LENGTH_LONG).show()
         }
 
+        //스크롤시 fab을 사라지게 합니다.
+        NestedScrollView.setOnScrollChangeListener { v: NestedScrollView?, scrollX: Int, scrollY: Int, oldScrollX: Int, oldScrollY: Int ->
+            val dy = oldScrollY - scrollY
+            if (dy < 0) {
+                bottomAppBar.performHide().run {
+                    fab.hide()
+                    angryFab.hide()
+                    sadFab.hide()
+                    smailFab.hide()
+                }
+            } else if (dy > 0) {
+                bottomAppBar.performShow().run {
+                    fab.show()
+                    if (clickedFab){
+                        angryFab.show()
+                        sadFab.show()
+                        smailFab.show()
+                    }
+                }
+            }
+        }
     }
 
     //뒤로 가기를 2번 연속으로 눌러야지만 뒤로가기가 작동하게 만듭니다.
