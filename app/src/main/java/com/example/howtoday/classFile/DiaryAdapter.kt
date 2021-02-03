@@ -9,6 +9,8 @@ import com.example.howtoday.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_diary.view.*
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// 다이어리 메인 게시글의 어댑터 클래스 입니다.
 class DiaryAdapter(var diary : List<WriteInfo>) : RecyclerView.Adapter<DiaryItem>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DiaryItem {
         var view = LayoutInflater.from(parent.context)
@@ -25,6 +27,7 @@ class DiaryAdapter(var diary : List<WriteInfo>) : RecyclerView.Adapter<DiaryItem
     }
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
 //아이템 클래스로써 RecyclerView.ViewHolder(itemView)를 상속 받아야 합니다.
 //아이템을 바인딩 해주는 함수가 들어있습니다.
 class DiaryItem(itemView: View) : RecyclerView.ViewHolder(itemView){

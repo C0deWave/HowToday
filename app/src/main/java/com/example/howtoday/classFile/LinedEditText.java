@@ -9,8 +9,6 @@ import android.util.AttributeSet;
 import android.widget.Toast;
 
 //글을 적지 않아도 밑줄이 있는 상태에서 시작할 수 있게 해주는 소스입니다.
-
-
 public class LinedEditText extends androidx.appcompat.widget.AppCompatEditText {
     private Paint mPaint = new Paint();
 
@@ -100,7 +98,6 @@ public class LinedEditText extends androidx.appcompat.widget.AppCompatEditText {
             @Override
             public void onTextChanged(CharSequence s, int start, int before,
                                       int count) {
-                //TODO sth
             }
 
             @Override

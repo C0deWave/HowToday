@@ -12,22 +12,11 @@ import com.example.howtoday.R
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_my_diary.view.*
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
+// 내일기 버튼을 클릭했을때의 프레그먼트 입니다.
 class MyDiaryFragment : Fragment() {
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
 
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
+    ////////////////////////////////////////////////////////////////////////////////////////////////
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,9 +24,9 @@ class MyDiaryFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_my_diary, container, false)
 
-        // 로그아웃 버튼을 눌렀을때
+        // 로그아웃 버튼을 눌렀을때 리스너입니다.
         view.logoutButton.setOnClickListener {
-            Log.d("로그아웃버튼",": 클릭")
+            Log.d("로그아웃버튼", ": 클릭")
             //파이어베이스 로그아웃을 합니다.
             FirebaseAuth.getInstance().signOut()
             //로그인 화면으로 넘어갑니다.
@@ -50,8 +39,5 @@ class MyDiaryFragment : Fragment() {
 
         // Inflate the layout for this fragment
         return view
-    }
-
-    companion object {
     }
 }

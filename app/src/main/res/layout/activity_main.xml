@@ -38,7 +38,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@android:color/transparent"
-
             app:itemRippleColor="#00FFFFFF"
             app:menu="@menu/bottom_navigation_menu" />
 
@@ -82,7 +81,6 @@
         android:layout_width="70dp"
         android:layout_height="67dp"
         android:contentDescription="OrderDiary"
-
         android:focusable="true"
         android:src="@drawable/ic_account"
         app:layout_anchor="@id/bottomAppBar" />
